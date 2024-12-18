@@ -19,3 +19,21 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer components {
+  .hamburger-menu {
+    @apply flex flex-col justify-between cursor-pointer w-7 h-6;
+  }
+  .bar {
+    @apply w-full h-[2px] bg-black transition-transform duration-300;
+  }
+  .change .bar:nth-child(1) {
+    transform: translateY(11px) rotate(-45deg);
+  }
+  .change .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .change .bar:nth-child(3) {
+    transform: translateY(-11px) rotate(45deg);
+  }
+}
